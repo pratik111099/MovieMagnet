@@ -1,0 +1,115 @@
+@import "../../../mixings.scss";
+
+.videoSection {
+    margin: 50px 0;
+    .title {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: white;
+    }
+    .videoItems {
+        display: flex;
+        gap: 20px;
+        overflow-y: hidden;
+        justify-content: start;
+        .videoItem {
+            width: 200px;
+            flex-shrink: 0;
+            cursor: pointer;
+            @include md {
+                width: 25%;
+            }
+            .videoThumnail {
+                position: relative;
+                .img {
+                    width: 100%;
+                    margin-bottom: 10px;
+                    border-radius: 10px;
+                    // width: 200px;
+                    // height: 120px;
+                    // @include md {
+                    //     width: 250px;
+                    //     height: 135px;
+                    // }
+                    // @include lg {
+                    //     width: 270px;
+                    //     height: 150px;
+                    // }
+                }
+                svg {
+                    top: 50%;
+                    left: 50%;
+                    z-index: 1;
+                    width: 50px;
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                }
+                .triangle {
+                    stroke-dashoffset: 480;
+                    stroke-dasharray: 240;
+                    stroke: white;
+                    transform: translateY(0);
+                    transition: all 0.7s ease-in-out;
+                }
+                .circle {
+                    stroke-dashoffset: 1300;
+                    stroke-dasharray: 650;
+                    stroke: white;
+                    transition: all 0.7s ease-in-out;
+                }
+                &:hover {
+                    .triangle {
+                        stroke-dashoffset: 0;
+                        stroke: var(--pink);
+                        opacity: 1;
+                    }
+                    .circle {
+                        stroke-dashoffset: 0;
+                        stroke: var(--pink);
+                    }
+                }
+            }
+            .videoTitle {
+                color: white;
+                margin-top: 5px;
+            }
+        }
+    }
+    .videosLoader {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+
+        .video {
+            .thumbnail {
+                width: 200px;
+                height: 120px;
+                margin-bottom: 10px;
+                border-radius: 10px;
+                @include md {
+                    width: 250px;
+                    height: 135px;
+                }
+                @include lg {
+                    width: 270px;
+                    height: 150px;
+                }
+            }
+            .title {
+                div {
+                    height: 20px;
+                    &:first-child {
+                        width: 170px;
+                        margin-bottom: 10px;
+                        border-radius: 5px;
+                    }
+                    &:last-child {
+                        width: 100px;
+                        margin-bottom: 10px;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

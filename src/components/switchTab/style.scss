@@ -1,0 +1,37 @@
+.switchTab {
+    background-color: white;
+    padding: 2px;
+    border-radius: 20px;
+    height: 34px;
+    .tabItems {
+        display: flex;
+        height: 30px;
+        align-items: center;
+        position: relative;
+        .tabItem {
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-size: 14px;
+            z-index: 1;
+            cursor: pointer;
+            color: var(--black);
+            transition: color ease 0.3s;
+            &.active {
+                color: white;
+            }
+        }
+        .activeBg {
+            color: white;
+            background-image: var(--gradient);
+            border-radius: 20px;
+            width: 100px;
+            height: 30px;
+            position: absolute;
+            left: 0;
+            transition: left cubic-bezier(0.88, -0.35, 0.565, 1.35) 0.4s;
+        }
+    }
+}

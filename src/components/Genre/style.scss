@@ -1,0 +1,12 @@
+.genres {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    list-style-type: none;
+    .genreItem {
+        background-color: var(--pink);
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 11px;
+    }
+}

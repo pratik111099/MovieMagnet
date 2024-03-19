@@ -1,0 +1,264 @@
+@import "../../../mixings.scss";
+
+.detailsBanner {
+    width: 100%;
+    background-color: var(--black);
+    padding-top: 100px;
+    margin-bottom: 50px;
+    position: relative;
+    @include md {
+        padding-top: 120px;
+        // max-height: 700px;
+    }
+    .detailsBannerContent {
+        .backgroundImg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.1;
+            overflow: hidden;
+            .lazy-load-image-background {
+                width: 100%;
+                height: 100%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+        .opacityLayer {
+            width: 100%;
+            height: 250px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(4, 21, 45, 0) 0%,
+                #04152d 79.17%
+            );
+        }
+        .content {
+            display: flex;
+            gap: 50px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            @include md {
+                flex-direction: row;
+                gap: 50px;
+            }
+
+            .left {
+                flex-shrink: 0;
+                .posterImg {
+                    width: 100%;
+                    display: block;
+                    aspect-ratio: 1/1.5;
+                    border-radius: 12px;
+
+                    @include md {
+                        max-width: 350px;
+                    }
+                }
+            }
+            .right {
+                height: fit-content;
+                color: white;
+                .title {
+                    font-size: 28px;
+                    line-height: 40px;
+                    @include md {
+                        font-size: 34px;
+                        line-height: 44px;
+                    }
+                }
+                .subtitle {
+                    font-size: 17px;
+                    line-height: 24px;
+                    font-style: italic;
+                    opacity: 0.5;
+                    margin-bottom: 25px;
+                    @include md {
+                        font-size: 20px;
+                        line-height: 28px;
+                    }
+                }
+                .ratingSection {
+                    margin-bottom: 15px;
+                    display: flex;
+                    gap: 30px;
+                    .ratings {
+                        width: 90px;
+                        color: white;
+                        background-color: var(--black3);
+                    }
+                    .playBtn {
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        cursor: pointer;
+                        svg {
+                            width: 60px;
+                            @include md {
+                                width: 80px;
+                            }
+                        }
+                        .text {
+                            font-size: 20px;
+                            transition: all 0.7s ease-in-out;
+                        }
+                        .triangle {
+                            stroke-dashoffset: 480;
+                            stroke-dasharray: 240;
+                            stroke: white;
+                            transform: translateY(0);
+                            transition: all 0.7s ease-in-out;
+                        }
+                        .circle {
+                            stroke-dashoffset: 1300;
+                            stroke-dasharray: 650;
+                            stroke: white;
+                            transition: all 0.7s ease-in-out;
+                        }
+                        &:hover {
+                            .text {
+                                color: var(--pink);
+                            }
+                            .triangle {
+                                stroke-dashoffset: 0;
+                                stroke: var(--pink);
+                                opacity: 1;
+                                // animation: trailorPlay 0.7s ease-in-out;
+                            }
+                            .circle {
+                                stroke-dashoffset: 0;
+                                stroke: var(--pink);
+                            }
+                        }
+                    }
+                }
+                .overview {
+                    margin-bottom: 25px;
+                    .title {
+                        font-size: 24px;
+                        margin-bottom: 10px;
+                    }
+                    .content {
+                        line-height: 24px;
+                        @include md {
+                            padding-right: 40px;
+                        }
+                        @include xl {
+                            padding-right: 100px;
+                        }
+                    }
+                }
+                .movieDetails {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 15px 0;
+                    padding-right: 50px;
+                    gap: 20px;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                    @include md {
+                        padding-right: 45px;
+                    }
+                    @include lg {
+                        padding: 5px 0;
+                        padding-right: 60px;
+                    }
+                    @include xl {
+                        padding-right: 100px;
+                    }
+
+                    .detailSection {
+                        display: flex;
+                        flex-flow: column;
+
+                        @include lg {
+                            flex-flow: row;
+                            align-items: center;
+                            gap: 10px;
+                        }
+                    }
+                    .title {
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+                    .content {
+                        opacity: 0.5;
+                    }
+                }
+                .director {
+                    padding: 5px 0;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                    .title {
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+                    .content {
+                        opacity: 0.5;
+                        display: inline;
+                        padding-left: 10px;
+                    }
+                }
+                .writer {
+                    padding: 5px 0;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                    .title {
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+                    .content {
+                        opacity: 0.5;
+                        display: inline;
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .detailsBannerLoader {
+        .contentWrapper {
+            gap: 50px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            @include md {
+                flex-direction: row;
+                gap: 50px;
+            }
+        }
+        .leftLoader {
+            width: 100%;
+            display: block;
+            aspect-ratio: 1/1.5;
+            border-radius: 12px;
+            @include md {
+                max-width: 350px;
+            }
+        }
+        .rightLoader {
+            width: 100%;
+            .row {
+                width: 100%;
+                height: 25px;
+                border-radius: 50px;
+                margin-bottom: 20px;
+                &:nth-child(2) {
+                    width: 70%;
+                    margin-bottom: 50px;
+                }
+                &:nth-child(5) {
+                    width: 50%;
+                    margin-bottom: 50px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@import "../../mixings.scss";
+.loaderDiv {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include md {
+        height: 1000px;
+    }
+    @include lg {
+        height: 400px;
+    }
+}

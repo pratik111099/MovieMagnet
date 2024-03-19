@@ -1,0 +1,69 @@
+@import "../../mixings.scss";
+
+.footer {
+    background-color: var(--black3);
+    padding: 50px 0;
+    color: white;
+    .contentWrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .menuItems {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        @include md {
+            margin-bottom: 30px;
+            gap: 30px;
+        }
+        .menuItem {
+            transition: all ease 0.3s;
+            cursor: pointer;
+            font-size: 12px;
+            @include md {
+                font-size: 16px;
+            }
+            &:hover {
+                color: var(--pink);
+            }
+        }
+    }
+    .infoText {
+        font-size: 12px;
+        line-height: 20px;
+        opacity: 0.5;
+        text-align: center;
+        max-width: 800px;
+        margin-bottom: 20px;
+        @include md {
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+    }
+    .socialMediaIcons {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        .icon {
+            padding: 10px;
+            display: flex;
+            cursor: pointer;
+            border: 1px solid var(--black);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            transition: all ease 0.3s;
+            background-color: var(--black);
+            &:hover {
+                box-shadow: 0 0 0.625em var(--pink);
+                color: var(--pink);
+            }
+        }
+    }
+}
